@@ -18,11 +18,11 @@ series=[ser(c,o[o.country==c]) for c in sorted(o.country.unique()) if c!='China'
 series.append({"name":"Median","color":"#111827","data":[[int(round(r.x)),round(float(r.med),2),"%d countries"%r.n] for r in m.itertuples()]})
 series.append(ser('China',o[o.country=='China'],'#C71E1D'))
 cfg={"type":"line","xType":"number","xScale":"log","xMin":5000,"xMax":85000,
- "headline":"China's growth has slowed as incomes rose, as it did for peers, but it stays ahead of them",
+ "headline":"China's growth slowed as incomes rose, as is standard, but is still ahead of average",
  "subhead":"Average annual GDP per capita growth over the prior 5 years, by GDP per capita (2011 int'l $, log scale)",
  "source":"Maddison Project Database 2023 (via Our World in Data); author's calculations",
  "sourceUrl":"https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023",
- "note":"Each line is one economy, 1955-2022; growth is the trailing 5-year compound rate ending in the year shown. The median takes each country's average growth within income bands about 15% wide, then the median across countries, shown where at least 8 countries are present. Comparison economies are the 26 that eventually passed $15,000, which tilts the median upward at lower incomes.",
+ "note":"Comparison economies are the 26 that eventually passed $15,000 for the years 1955-2022.",
  "xLabel":"GDP per capita (2011 international dollars)","yLabel":"5-year annualized growth (%)",
  "format":{"suffix":"%","decimals":0},"xFormat":{"prefix":"$","compact":True,"decimals":0},"hoverDecimals":1,
  "range":False,"highlight":["China","Median"],
