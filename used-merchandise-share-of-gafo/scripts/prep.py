@@ -14,10 +14,11 @@ adjusted monthly series, in millions of nominal dollars:
                 part of GAFO.
 
 Both series are nominal and in the same dollars, so the ratio needs no
-inflation adjustment. Because the data are not seasonally adjusted (and GAFO
-spikes every December), the charted share is a trailing 12-month ratio:
-sum of the last 12 months of used-merchandise sales divided by the sum of the
-last 12 months of GAFO sales.
+inflation adjustment. Two shares are written: the monthly ratio (what the
+chart plots; it dips every December because the data are not seasonally
+adjusted and GAFO holiday sales peak then) and a trailing 12-month ratio
+(sum of the last 12 months of used-merchandise sales divided by the sum of the
+last 12 months of GAFO sales), which removes that seasonal swing.
 
 Writes data/used_merch_gafo_monthly.csv. Run from inside scripts/:
     python prep.py
