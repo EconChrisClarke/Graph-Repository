@@ -29,8 +29,8 @@ cfg = {
              "goods, hobby, musical instrument and book (451), general merchandise (452), and office "
              "supply, stationery and gift stores (4532). Used merchandise stores (4533), such as thrift, "
              "consignment and antique shops, are not part of GAFO. Share = monthly used merchandise sales "
-             "divided by monthly GAFO sales, both in nominal dollars and not seasonally adjusted, so the "
-             "share dips every December when GAFO holiday sales peak. Excludes online resale platforms. "
+             "divided by monthly GAFO sales, both in nominal dollars and not seasonally adjusted. "
+             "Excludes online resale platforms. "
              "Latest month (Sep 2026) is preliminary."),
     "xType": "date",
     "format": {"suffix": "%", "decimals": 1},
