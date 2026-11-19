@@ -7,7 +7,7 @@ Inputs (in ../data/):
                         https://ourworldindata.org/grapher/political-corruption-index
                         (metadata in owid_vdem_political_corruption.metadata.json)
   wb_gdp_ppp.json       World Bank NY.GDP.PCAP.PP.KD: GDP per capita, PPP (constant 2021
-                        international $), 2020-2025.
+                        international $), 2018-2025.
   wb_countries.json     World Bank country list, used to drop regional aggregates.
 
 Output: ../data/vdem_vs_gdp_ppp.csv
