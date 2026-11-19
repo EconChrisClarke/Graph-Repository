@@ -53,6 +53,7 @@
     border:1px solid #D9C7CB;border-radius:7px;padding:7px 10px;margin-left:16px}
   .ctlcheck:hover{border-color:var(--red);color:var(--red)}
   .ctlcheck input{accent-color:var(--red);margin:0;cursor:pointer}
+  .ctlcheck[hidden]{display:none}
   body.embed #controls{display:none}
   table.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
@@ -78,6 +79,7 @@
     <button data-m="substack">Substack 1456</button>
     <button data-m="vertical">Vertical 9:16</button>
     <button data-m="square">Square 1:1</button>
+    <label class="ctlcheck" id="plwrap" hidden><input type="checkbox" id="plbox">Data labels</label>
     <button id="dl" class="dl">Download PNG</button>
   </div>
   <div id="copytext"></div>
@@ -1029,7 +1031,25 @@ const PRESETS = {
    every reader defaults rather than assuming. */
 function fscale(P){ return (P && P.fs) ? P.fs : 1; }
 function hscale(P){ return (P && P.hs) ? P.hs : 1; }
-function showPointLabels(P){ return !P || P.pl !== false; }
+/* Point labels are on or off per frame. Each frame starts from its preset's
+   `pl` (vertical off), and the "Data labels" checkbox in the View row
+   overrides it for the frame that is showing. Keyed by frame name, so switching
+   frames brings back that frame's own setting, and a download draws what is on
+   screen. */
+const PL_ON = {};
+function showPointLabels(P){
+  if(!P) return true;
+  for(const k in PRESETS) if(PRESETS[k] === P && k in PL_ON) return PL_ON[k];
+  return P.pl !== false;
+}
+function hasPointLabels(){
+  return CHART.type === 'scatter' && !!CHART.pointLabels
+    && (CHART.pointLabels === 'all' || CHART.pointLabels.length > 0);
+}
+function syncPointLabelBox(){
+  const box = document.getElementById('plbox');
+  if(box) box.checked = showPointLabels(PRESETS[MODE]);
+}
 
 /* Footer TEXT — the note and the source — is drawn into the canvas for every
    EXPORT, because a PNG travels without the page around it and those lines are
@@ -2559,6 +2579,7 @@ function setMode(m){
   MODE = m;
   document.querySelectorAll('#bar button[data-m]').forEach(b =>
     b.classList.toggle('on', b.dataset.m === MODE));
+  syncPointLabelBox();
   render();
 }
 
@@ -2982,6 +3003,15 @@ function boot(){
   buildZoom();
   buildAxes();
   buildSeriesToggles();
+  if(hasPointLabels()){
+    for(const k in PRESETS) PL_ON[k] = PRESETS[k].pl !== false;
+    document.getElementById('plwrap').hidden = false;
+    syncPointLabelBox();
+    document.getElementById('plbox').addEventListener('change', function(){
+      PL_ON[MODE] = this.checked;
+      render();
+    });
+  }
   if(typeof CHART.logo === 'string' && CHART.logo){
     logoImg = new Image();
     logoImg.onload = render;
