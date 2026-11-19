@@ -79,7 +79,7 @@
     <button data-m="substack">Substack 1456</button>
     <button data-m="vertical">Vertical 9:16</button>
     <button data-m="square">Square 1:1</button>
-    <label class="ctlcheck" id="plwrap" hidden><input type="checkbox" id="plbox"><span id="pltext">Point labels</span></label>
+    <label class="ctlcheck" id="plwrap" hidden><input type="checkbox" id="plbox">Data labels</label>
     <button id="dl" class="dl">Download PNG</button>
   </div>
   <div id="copytext"></div>
@@ -148,9 +148,8 @@ const CHART = {
      Scatter only, matched against each point's third element.
      Off by default on the vertical frame — at 9:16 the plot is small and a
      phone reader is not hunting for Estonia — but a checkbox in the View row
-     turns them on or off for whichever frame is showing, and the PNG follows. */
+     ("Data labels") turns them on or off for whichever frame is showing, and the PNG follows. */
   pointLabels: [],              // ['Bangladesh','Iceland',...] or 'all'
-  pointLabelsName: 'Point labels', // checkbox text, e.g. 'Country labels'
   bands:       [],              // [{x0, x1}] shaded x ranges (recessions etc.)
 
   /* A reference line across the plot: a threshold, a target, a median. Give it
@@ -2182,7 +2181,6 @@ function boot(){
   buildSeriesToggles();
   if(hasPointLabels()){
     for(const k in PRESETS) PL_ON[k] = PRESETS[k].pl !== false;
-    document.getElementById('pltext').textContent = CHART.pointLabelsName || 'Point labels';
     document.getElementById('plwrap').hidden = false;
     syncPointLabelBox();
     document.getElementById('plbox').addEventListener('change', function(){

@@ -55,7 +55,6 @@ cfg = {
     "hoverDecimals": 1,
     "fit": True,
     "pointLabels": labels,
-    "pointLabelsName": "Country labels",
     "series": [{"name": "Economies", "data": pts}],
 }
 json.dump(cfg, open(os.path.join(DATA, "chart.json"), "w"), indent=1)
