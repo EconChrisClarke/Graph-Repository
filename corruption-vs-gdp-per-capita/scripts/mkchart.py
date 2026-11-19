@@ -26,12 +26,6 @@ labels = ["Denmark", "Finland", "Singapore", "Switzerland", "United States", "Un
           "Mexico", "South Korea", "Venezuela"]
 labels = [l for l in labels if l in by]
 
-ann = [
-    dict(x=by["Russia"][0], y=by["Russia"][1], dx=10, dy=40,
-         text="Russia: as rich as Portugal, scores below Mali"),
-    dict(x=by["Rwanda"][0], y=by["Rwanda"][1], dx=-10, dy=-40,
-         text="Rwanda: poorer than India, scores level with Qatar"),
-]
 
 cfg = {
     "type": "scatter",
@@ -56,7 +50,6 @@ cfg = {
     "format": {"decimals": 0},
     "fit": True,
     "pointLabels": labels,
-    "annotations": ann,
     "series": [{"name": "Countries", "data": pts}],
 }
 json.dump(cfg, open(os.path.join(DATA, "chart.json"), "w"), indent=1)
