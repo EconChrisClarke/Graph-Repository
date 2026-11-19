@@ -79,7 +79,7 @@
     <button data-m="substack">Substack 1456</button>
     <button data-m="vertical">Vertical 9:16</button>
     <button data-m="square">Square 1:1</button>
-    <label class="ctlcheck" id="plwrap" hidden><input type="checkbox" id="plbox"><span id="pltext">Point labels</span></label>
+    <label class="ctlcheck" id="plwrap" hidden><input type="checkbox" id="plbox">Data labels</label>
     <button id="dl" class="dl">Download PNG</button>
   </div>
   <div id="copytext"></div>
@@ -141,7 +141,6 @@ const CHART = {
     "Mexico",
     "South Korea"
   ],
-  "pointLabelsName": "Country labels",
   "series": [
     {
       "name": "Economies",
@@ -3135,7 +3134,6 @@ function boot(){
   buildSeriesToggles();
   if(hasPointLabels()){
     for(const k in PRESETS) PL_ON[k] = PRESETS[k].pl !== false;
-    document.getElementById('pltext').textContent = CHART.pointLabelsName || 'Point labels';
     document.getElementById('plwrap').hidden = false;
     syncPointLabelBox();
     document.getElementById('plbox').addEventListener('change', function(){
