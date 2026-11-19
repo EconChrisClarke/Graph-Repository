@@ -1,6 +1,6 @@
 {
  "type": "scatter",
- "headline": "Low Corruption and Standard of Living are Strongly Correlated",
+ "headline": "Low corruption and standard of living are strongly correlated",
  "subhead": "World Bank Control of Corruption score, 2025 (0 = worst, 100 = best) vs GDP per capita at purchasing power parity",
  "source": "World Bank, Worldwide Governance Indicators 2026 update, Control of Corruption, governance score (GOV_WGI_CC.SC); World Bank, World Development Indicators, GDP per capita, PPP (constant 2021 international $), NY.GDP.PCAP.PP.KD",
  "sourceUrl": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",

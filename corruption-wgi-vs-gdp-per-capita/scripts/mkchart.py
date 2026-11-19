@@ -36,7 +36,7 @@ assert all(l in names for l in labels), [l for l in labels if l not in names]
 
 cfg = {
     "type": "scatter",
-    "headline": "Low Corruption and Standard of Living are Strongly Correlated",
+    "headline": "Low corruption and standard of living are strongly correlated",
     "subhead": "World Bank Control of Corruption score, 2025 (0 = worst, 100 = best) vs GDP per "
                "capita at purchasing power parity",
     "source": "World Bank, Worldwide Governance Indicators 2026 update, Control of Corruption, "

@@ -18,7 +18,7 @@ subfolder with the source data and the script used to compute the numbers.
 | China's growth has slowed as incomes rose, as it did for peers, but it stays ahead of them | [china-solow-growth-vs-income.html](https://econchrisclarke.github.io/Graph-Repository/china-solow-growth-vs-income.html) | [folder](china-solow-growth-vs-income/) |
 | Secondhand stores' sales are the highest share of merchandise sales on record | [used-merchandise-share-of-gafo.html](https://econchrisclarke.github.io/Graph-Repository/used-merchandise-share-of-gafo.html) | [folder](used-merchandise-share-of-gafo/) |
 | Richer countries are seen as far less corrupt | [corruption-vs-gdp-per-capita.html](https://econchrisclarke.github.io/Graph-Repository/corruption-vs-gdp-per-capita.html) | [folder](corruption-vs-gdp-per-capita/) |
-| Low Corruption and Standard of Living are Strongly Correlated | [corruption-wgi-vs-gdp-per-capita.html](https://econchrisclarke.github.io/Graph-Repository/corruption-wgi-vs-gdp-per-capita.html) | [folder](corruption-wgi-vs-gdp-per-capita/) |
+| Low corruption and standard of living are strongly correlated | [corruption-wgi-vs-gdp-per-capita.html](https://econchrisclarke.github.io/Graph-Repository/corruption-wgi-vs-gdp-per-capita.html) | [folder](corruption-wgi-vs-gdp-per-capita/) |
 | Richer countries have far less political corruption | [corruption-vdem-vs-gdp-per-capita.html](https://econchrisclarke.github.io/Graph-Repository/corruption-vdem-vs-gdp-per-capita.html) | [folder](corruption-vdem-vs-gdp-per-capita/) |
 
 ## Repo layout
